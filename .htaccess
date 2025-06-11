@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^serial.ok1kky\.cz$ [NC]
+RewriteRule ^(.*)$ https://serial.ok1kky.cz/$1 [R=301,L]
+RewriteEngine On

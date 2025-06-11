@@ -1,3 +1,3 @@
 # Web-Serial-Monitor
 
-![image](image.jpg)
+![image](image.jpeg)

@@ -306,7 +306,9 @@
 
     // Save the log contents to a file
     document.getElementById("saveBtn").addEventListener("click", () => {
-      const blob = new Blob([log.textContent], { type: "text/plain" });
+      const rawText = log.innerText;
+      const cleanText = rawText.replace(/[^\x09\x0A\x0D\x20-\x7E]/g, '');
+      const blob = new Blob([cleanText], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
